@@ -1,29 +1,30 @@
 * {
   padding: 0;
-  margin: 5;
+  margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Smooth and cool gradient */
   color: #f0f3f6;
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
 }
 
 .container {
-  width: 90%;
-  max-width: 75%;
-  height: auto;
+  width: 90%; /* Wider container (80% of screen width) */
+  max-width: 60em; /* Maximum width to prevent it from getting too wide */
+  height: 100%; /* Auto height */
   padding: 2em;
-  background-color: #161b22;
+  background-color: #161b22; /* Dark background for the container */
   border-radius: 1em;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Soft shadow for the container */
   text-align: center;
-  margin-bottom: 9em;
+  margin-top: 3em;
+  margin-bottom: 3em; /* To avoid the container stretching too far down */
 }
 
 h1 {
@@ -68,10 +69,10 @@ button:hover {
 #result {
   margin-top: 2em;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 cards in one row */
   gap: 1.2em;
-  max-width: 100%;
-  overflow-x: hidden;
+  max-width: 100%; /* Ensure the cards don’t exceed the container width */
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .planet-box {
@@ -84,7 +85,9 @@ button:hover {
   text-align: center;
   border-radius: 0.5em;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
 }
 
 .planet-box:hover {
@@ -98,14 +101,19 @@ button:hover {
   margin-bottom: 1em;
 }
 
+input[type="number"] {
+  -moz-appearance: textfield; /* Hide number input arrows */
+}
+
+/* Make sure cards are responsive on smaller screens */
 @media (max-width: 768px) {
   #result {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on smaller screens */
   }
 }
 
 @media (max-width: 480px) {
   #result {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 1 card per row on very small screens */
   }
 }
