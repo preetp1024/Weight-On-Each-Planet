@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Calculate your weight on each planet in the Solar System with this fun, dark-themed space app."
+    />
+    <title>Weight On Each Planet</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Optional fallback in case external CSS doesn't load */
+      body {
+        background-color: #0d1117;
+        color: #f0f3f6;
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1>🌠 Your Weight on Planets of Our Solar System</h1>
+      <div class="input-group">
+        <label for="earthWeight">Enter Your Weight on Earth (kg):</label>
+        <input
+          type="number"
+          id="earthWeight"
+          placeholder="e.g. 70"
+          aria-label="Enter your weight in kilograms"
+        />
+      </div>
+      <button id="calculateBtn">🚀 Calculate Weights</button>
+      <div id="result"></div>
+    </main>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+    <script>
+      document
+        .getElementById("calculateBtn")
+        .addEventListener("click", calculateWeights);
+    </script>
+  </body>
+</html>
